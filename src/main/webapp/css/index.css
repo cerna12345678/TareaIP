@@ -1,0 +1,19 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 25/05/2022, 03:53:18 PM
+    Author     : cerna
+*/
+
+body {
+  display: flex;
+  align-items: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background: #2980B9;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #c2efff,#6DD5FA, #6DD5FA, #6DD5FA, #59a3ff);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right,#c2efff,#6DD5FA, #6DD5FA, #6DD5FA, #59a3ff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}

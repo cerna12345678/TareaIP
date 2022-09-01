@@ -1,0 +1,75 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background: #2980B9;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #b1e9fc, #6DD5FA, #2980B9);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #b1e9fc, #6DD5FA,#6DD5FA, #2980B9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+.form-signin {
+  width: 30%;
+  padding: 30px;
+  margin: auto;
+  max-width: 500px;
+}
+
+.form-signin .checkbox {
+  font-weight: 400;
+}
+
+.form-signin .form-floating:focus-within {
+  z-index: 2;
+}
+
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+form{
+    background: #fff;
+    padding: 40px ;
+    box-shadow: 0 0 20px 0 rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    
+}
+
+
+
+form .campos{
+    
+    margin: 45px ;
+}
+input:focus{ 
+    outline: none;
+    color: #5e5d5d;
+}
+
+label{
+    color: var(--colorTextos);
+    font-size: 16px;
+    position: absolute;
+    transition: 0.7s ease all;
+    pointer-events: none;
+}
+
+input:focus~label,
+input:valid~label{
+    
+   
+    color: black;
+}
