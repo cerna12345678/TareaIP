@@ -16,11 +16,11 @@
     String query = "";
     String correo = request.getParameter("correo_in");
     String contrasena = request.getParameter("contrasena_in");
-    String rol= "";
+    String rol= "";.
     if (correo != null) {
         try {
             st = conn.createStatement();
-            query = "SELECT usu_correo,usu_contrasena,id_rol FROM login WHERE usu_correo='" + correo + "'and usu_contrasena='" + contrasena + "'";
+            query = "SELECT usu_correo,usu_contrasena,usu_rol FROM login WHERE usu_correo='" + correo + "'and usu_contrasena='" + contrasena + "'";
             rs = st.executeQuery(query);
             if (rs.next()) {
                 rol=rs.getString("rol_nombre");
