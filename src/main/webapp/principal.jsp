@@ -14,8 +14,15 @@
 
 <%
     HttpSession sesion = request.getSession();
-    String nombre_Sesion = (String) sesion.getAttribute("nivel");
+    String rol_Sesion = (String) sesion.getAttribute("rol");
     String correo_Sesion = (String) sesion.getAttribute("correo");
+    if(rol_Sesion != null){
+        System.out.println("Hay una sesion");
+    }
+    else{
+        System.out.println("No hay una sesion");
+        response.sendRedirect("index.html");
+    }
 %>
 <!DOCTYPE html>
 <html lang="en">
@@ -179,7 +186,7 @@
             </ul>
             <hr>
             <div>
-
+                <button type="button" class="btn btn-primary btn-lg px-4 me-md-2" onclick="location.href = 'cerrarsesion.jsp'">Cerrar Sesion</button>
             </div>
         </div>
         <div class="b-example-divider"></div>
@@ -195,7 +202,7 @@
                     <br>
                     <br>
                     <h2 class="color-blanco tamano-letra" align="left">
-                        Usuario: <%out.println(nombre_Sesion);%>
+                        Rol: <%out.println(rol_Sesion);%>
                         <br>
                         Correo: <%out.println(correo_Sesion);%>
                     </h2>

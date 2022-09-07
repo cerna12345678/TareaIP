@@ -14,21 +14,22 @@
     Statement st = null;
     ResultSet rs = null;
     String query = "";
+    
     String correo = request.getParameter("correo_in");
     String contrasena = request.getParameter("contrasena_in");
-    String rol= "";.
+    String rol= "";
     if (correo != null) {
         try {
             st = conn.createStatement();
-            query = "SELECT usu_correo,usu_contrasena,usu_rol FROM login WHERE usu_correo='" + correo + "'and usu_contrasena='" + contrasena + "'";
+            query = "SELECT usu_correo,usu_rol FROM usuarios WHERE usu_correo='" + correo + "' and usu_contrasena='" + contrasena + "'";
             rs = st.executeQuery(query);
             if (rs.next()) {
-                rol=rs.getString("rol_nombre");
-                
+                rol=rs.getString("usu_rol");
                 System.out.println("Entro en el if");
                 HttpSession sesion = request.getSession();
                 
                 sesion.setAttribute("correo", correo);
+                sesion.setAttribute("rol", rol);
 
                 /*A manera de prueba se muestran los datos de la sesión
                 String nombre_Sesion = (String) sesion.getAttribute("nombre");
@@ -126,7 +127,7 @@
                         <input type="password" class="form-control" id="contrasena_in" name="contrasena_in" placeholder="Password">
                         <label for="contrasena_in">Contraseña</label>
                     </div>
-                    <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+                    <button class="w-100 btn btn-lg btn-primary" type="submit">Iniciar Sesion</button>
                     <p class="mt-5 mb-3 text-muted">&copy; 2017–2021</p>
                 </form>
             </div>
